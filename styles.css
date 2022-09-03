@@ -9,8 +9,13 @@ body {
     font-family: "Barlow Condensed", sans-serif;
   }
 
-
-  .wrapper {
+  .max-width {
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 3px solid #73AD21;
+}
+.wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -22,15 +27,6 @@ body {
       #131537 100%
     );
   }
-
-.max-width {
-    max-width: 960px;
-    margin-left: auto;
-    margin-right: auto;
-    border: 3px solid #73AD21;
-}
-
-
   
   .scoreboard {
     width: 700px;
@@ -76,15 +72,15 @@ body {
     text-align: left;
   }
   
-  .selections {
-    background-image: url("../assets/triangle.png");
+  .hands {
+    background-image: url("/images/bg-triangle.svg");
     background-position: center;
     background-repeat: no-repeat;
     visibility: visible;
     opacity: 1;
     position: relative;
-    width: 476px;
-    height: 430px;
+    width: 600px;
+    height: 500px;
     margin-top: 100px;
     display: flex;
     z-index: 0;
@@ -99,15 +95,42 @@ body {
   
   .hands .paper {
     margin-right: 20px;
+    background-color: #bbb;
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    display: inline-block;
+    border: 10px solid rgb(0, 38, 255);
   }
   
   .hands .scissors {
     margin-left: 20px;
+    background-color: #bbb;
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    display: inline-block;
+    border: 10px solid rgb(255, 251, 0);
+  }
+
+  .hands .rock {
+    margin-left: 20px;
+    background-color: #bbb;
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    display: inline-block;
+    border: 10px solid rgb(255, 0, 0);
   }
   
   .hands .hand {
     cursor: pointer;
     transition: all 0.25s;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    
+    
   }
   
   .hands .hand:hover {
@@ -154,6 +177,12 @@ body {
   .contest .handImageContainer {
     display: flex;
     justify-content: center;
+    background-color: #bbb;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    border: 10px solid rgb(0, 0, 0);
+
   }
   
   .referee {
@@ -172,3 +201,72 @@ body {
     display: flex;
     flex-direction: column;
   }
+
+  .rules {
+    color: hsl(0, 0%, 100%);
+    padding: 12px 24px;
+    transition: all 0.15s;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    border-radius: 15px;
+    border: 1px solid white;
+    display: flex;
+    justify-content: space-between;
+    background: radial-gradient(
+      134.34% 134.34% at 50% 0%,
+      #1f3757 0%,
+      #131537 100%
+    );
+    cursor: pointer;
+  }
+
+  
+  
+  /* MODAL
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    display: block;
+    max-width: 700px;
+    text-align: center;
+      
+    
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
